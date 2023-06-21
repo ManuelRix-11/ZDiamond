@@ -1,0 +1,341 @@
+
+:root
+{
+    --bright-color: hsl(0 0% 100%);
+    --dark-color: hsl(0 6% 14%);
+    --crystal-blue: hsl(204 85% 61%);
+    --inactive-crystal-blue: hsla(204, 50%, 40%, 0.73);
+    --accent: hsl(1 100% 68%);
+    --accent-purple: hsl(250 85% 74%);
+}
+
+.img-slider{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 34rem;
+    background: hsla(59 0% 81% / 0.1);
+    margin-bottom: 35rem;
+}
+
+.img-slider .slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 1.6s;
+    transition-property: clip-path;
+}
+
+.img-slider .slide img{
+    width: 100%;
+    max-height: 34.5rem;
+}
+#slide2 img
+{
+    height: 35rem;
+}
+
+.img-slider .navigation{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-slider .navigation .btn{
+    background: hsla(59 0% 21% / 0.1);
+    backdrop-filter: blur(.4rem);
+    width: 1.5rem;
+    height: .5rem;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.img-slider .navigation .btn.active{
+    background: hsla(59 0% 0% / 0.1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.section h2
+{
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.section
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    gap: 2rem;
+}
+.section:nth-of-type(n+2)
+{
+    padding-top: 4rem;
+}
+.section::after
+{
+    content: "";
+    display: block;
+    border-bottom: 1px solid rgba(0 0 0 /.15);
+    padding-top: 4rem;
+}
+
+.category
+{
+    margin-top: 31rem;
+}
+
+.shop-category
+{
+    display: flex;
+    gap: .5rem;
+    flex-direction: row;
+}
+
+.category-box
+{
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(0 0 0 /.15);
+    width: 30%;
+    height: 10rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-inner
+{
+    width: 100%;
+    height: 100%;
+    transition: transform 400ms ease;
+}
+.category-box:nth-of-type(1) .category-inner
+{
+    background-image: url("https://raw.githubusercontent.com/ManuelRixDiscord/ProgettoTSW/main/imgs/lunghezza1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.category-box:nth-of-type(2) .category-inner
+{
+    background-image: url("https://raw.githubusercontent.com/ManuelRixDiscord/ProgettoTSW/main/imgs/W000020.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.category-box:nth-of-type(3) .category-inner
+{
+    background-image: url("https://raw.githubusercontent.com/ManuelRixDiscord/ProgettoTSW/main/imgs/2-bracciale-le-petit-story-lux-bangles-lps05aqc03.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+.category-box:nth-of-type(4) .category-inner
+{
+    background-image: url("https://raw.githubusercontent.com/ManuelRixDiscord/ProgettoTSW/main/imgs/2-orecchino-la-petite-story-single-earrings-lps02aqm38.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.category-box>h4
+{
+    position: absolute;
+    bottom: 40%;
+    width: 50%;
+    text-align: center;
+    background: hsla(59 0% 21% / 0.1);
+    backdrop-filter: blur(.2rem);
+}
+.category-box:nth-of-type(4)
+{
+    color: white;
+}
+
+.newentry
+{
+    background-color: hsl(27, 100%, 88%);
+    color: hsl(192, 100%, 15%);
+}
+
+.new-entry
+{
+    justify-content: space-evenly;
+    display: flex;
+    gap: .5rem;
+    flex-direction: row;
+}
+
+.entry-box
+{
+    border: 1px solid rgba(0 0 0 /.15);
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    width: 12%;
+    height: 12rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 600ms ease;
+}
+
+.entry-box>h4
+{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    transform: translateX(150%);
+    padding: 50% 10%;
+    text-align: center;
+    transition: all 600ms ease-out;
+}
+
+.bestseller
+{
+    background-color: hsla(27 100% 88% / .3);
+}
+
+.best-seller
+{
+    justify-content: space-evenly;
+    display: flex;
+    gap: .5rem;
+    flex-direction: row;
+}
+
+.bestseller-box
+{
+    border: 1px solid rgba(0 0 0 /.15);
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    width: 12%;
+    height: 12rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 600ms ease;
+}
+
+.bestseller-box>h4
+{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    transform: translateX(150%);
+    padding: 50% 10%;
+    text-align: center;
+    transition: all 600ms ease-out;
+}
+
+.box
+{
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.box-animation{
+    opacity: 1;
+    transform: translateY(0);
+}
+.box-animation:nth-of-type(2)
+{
+    transition-duration: 2s;
+}
+.box-animation:nth-of-type(3)
+{
+    transition-duration: 2.5s;
+}
+
+.box-animation:nth-of-type(4)
+{
+    transition-duration: 3s;
+}
+
+@media screen and (max-width: 1000px) {
+    .box {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none !important;
+    }
+
+    .img-slider
+    {
+        display: none;
+    }
+
+    .category
+    {
+        margin-top: 0;
+    }
+
+    .entry-box
+    {
+        max-height:8rem;
+        max-width: 12%;
+    }
+
+    .bestseller-box
+    {
+        max-height: 8rem;
+        max-width: 12%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    .category-box
+    {
+        width:1000%
+    }
+    .shop-category
+    {
+        flex-wrap:wrap;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .entry-box
+    {
+        max-height:4rem;
+        max-width: 12%;
+    }
+
+    .bestseller-box
+    {
+        max-height: 4rem;
+        max-width: 12%;
+    }
+}
+
+@media (hover) {
+    .category-box>h4
+    {
+        position: absolute;
+        bottom: 40%;
+        width: 100%;
+        opacity: 0;
+        text-align: center;
+        transition: all 500ms ease;
+    }
+    .category-box:hover .category-inner
+    {
+        transform: scale(1.1);
+    }
+    .category-inner:hover ~ h4,
+    .category-box>h4:hover
+    {
+        transform: scale(1.1);
+        opacity: 1;
+        background: hsla(59 0% 21% / 0.1);
+        backdrop-filter: blur(.2rem);
+        padding: .3rem 0;
+        width: 50%;
+    }
+}

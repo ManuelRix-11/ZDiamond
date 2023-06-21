@@ -1,0 +1,245 @@
+:root
+{
+    --bright-color: hsl(0 0% 100%);
+    --dark-color: hsl(0 6% 14%);
+    --crystal-blue: hsl(204 85% 61%);
+    --inactive-crystal-blue: hsla(204, 50%, 40%, 0.73);
+    --accent: hsl(1 100% 68%);
+    --accent-purple: hsl(250 85% 74%);
+}
+
+header
+{
+    z-index: 50;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    background-color: hsl(0 0% 100% / .1);
+    backdrop-filter: blur(.4rem);
+}
+
+.logo-image
+{
+    width: 60%;
+}
+.logo-container
+{
+    margin: .3rem 0 0 .8rem;
+    max-width: 13%;
+}
+
+.main-nav
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    transition: all 0.35s ease;
+}
+
+.nav-list
+{
+    width: 100%;
+    display: flex;
+    padding: 0 4rem 0 0;
+    gap: 7rem;
+    justify-content: center;
+}
+.nav-list>li>a
+{
+    width: max-content;
+    background: linear-gradient(to bottom, transparent 90%, black 0) center center/0 75% no-repeat;
+    background-size: 0;
+    transition: background-size 500ms ease;
+}
+.nav-list>li>a:hover
+{
+    background-size: 100%;
+}
+
+.user-list
+{
+    position: relative;
+    width: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+}
+.user-list>li
+{
+    max-width: 40%;
+}
+
+.user-icon
+{
+    width: 80%;
+    cursor: pointer;
+}
+
+.cart-icon
+{
+    width: 55%;
+}
+
+.form-section
+{
+    display: none;
+    z-index: 10;
+    width: 25ch;
+    background-color: hsl(0 0% 100% / .9);
+    backdrop-filter: blur(.4rem);
+    position: absolute;
+    right: 1rem;
+    top: 6rem;
+    padding: 1.5rem .5rem;
+}
+.form-section.open
+{
+    border: 1px solid black;
+    border-radius: 9px;
+    display: flex;
+    gap: 1.3rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], input[type="password"]
+{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid black;
+    padding: .1rem;
+    text-align: center;
+}
+
+#login-button
+{
+    color: white;
+    border: none;
+    outline: 1px solid white;
+    outline-offset: 0;
+    background-color: var(--crystal-blue);
+    padding: .5rem 1.6rem;
+    transition: all 500ms ease;
+}
+#login-button:hover
+{
+    outline-offset: -.3rem;
+}
+
+.register-nav
+{
+    outline: 1px solid white;
+    outline-offset: 0;
+    color: black;
+    border: none;
+    background-color: var(--accent);
+    padding: .5rem 1rem;
+    transition: all 500ms ease;
+}
+.register-nav:hover
+{
+    outline-offset: -.3rem;
+}
+
+.media-nav
+{
+    background-color:transparent;
+    outline:none;
+    border:none;
+    display:none;
+}
+.line
+{
+    display: block;
+    height:.4rem;
+    margin-bottom:.2rem;
+    width: 1.6rem;
+    background:black;
+    border: 2px solid black;
+}
+
+@media screen and (max-width: 1200px) {
+    .logo-container
+    {
+        position:absolute;
+        top:0;
+        left:0;
+    }
+    .logo-image
+    {
+        max-width: 100%;
+    }
+
+    .media-nav
+    {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .nav-list
+    {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-list.media
+    {
+        position:absolute;
+        top:0;
+        right:0;
+        display: flex;
+        gap:3rem;
+        align-items:flex-end;
+        background-color: hsl(0 0% 100% / .9);
+        backdrop-filter: blur(.4rem);
+        width:30%;
+        height:100vh;
+    }
+
+    .user-list
+    {
+        position:absolute;
+        top:.2rem;
+        right:1rem;
+        gap:2.4rem;
+    }
+
+    .user-icon
+    {
+        width: 2rem;
+        cursor: pointer;
+    }
+
+    .cart-icon
+    {
+        width: 2rem;
+    }
+}
+
+@media screen and (max-width: 700px)
+{
+    .logo-image
+    {
+        width: 100%
+    }
+
+    .user-list
+    {
+        top:.5rem;
+        right:2rem;
+        gap:.9rem;
+    }
+    .user-icon
+    {
+        width: 2.2rem;
+    }
+    .cart-icon
+    {
+        width: 1.5rem;
+    }
+}

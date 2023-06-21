@@ -1,0 +1,145 @@
+:root
+{
+    --bright-color: hsl(0 0% 100%);
+    --dark-color: hsl(0 6% 14%);
+    --crystal-blue: hsl(204 85% 61%);
+    --inactive-accent: hsla(1 100% 68% / 0.73);
+    --accent: hsl(1 100% 68%);
+    --accent-purple: hsl(250 85% 74%);
+}
+
+.catalogue
+{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+span
+{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card
+{
+    display: flex;
+    max-width: 35ch;
+    flex-direction: column;
+}
+
+.card>img
+{
+    border: 1px solid rgba(0 0 0 /.15);
+    border-bottom: 1px solid rgba(0 0 0 /.1);
+}
+
+.card-inner
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .1rem;
+    padding: .5rem 0;
+    border: 1px solid rgba(0 0 0 /.15);
+    border-top: none;
+    background-color: hsla(27 100% 88% / .3);
+}
+
+.card-info {
+    border: 1px solid rgba(0 0 0 /.15);
+    border-top: none;
+    position: relative;
+    background-color: hsla(27 100% 88% / .3);
+}
+
+.card-inner >h3,
+.card-inner >h2
+{
+    font-weight: normal;
+}
+
+.buy-button
+{
+    cursor: pointer;
+    outline:1px solid var(--accent);
+    padding: .5rem 2rem;
+    position:relative;
+    overflow:hidden;
+}
+.buy-button::before
+{
+    content:"";
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background:var(--accent);
+    transform:translateX(-125%);
+    transition: all 500ms ease;
+    z-index:-5;
+}
+
+
+.buy-button.inactive
+{
+    cursor: default;
+    overflow: visible;
+    color:hsl(0 0% 0% / .3);
+}
+.buy-button.inactive::before
+{
+    content: none;
+}
+
+@media (hover)
+{
+    .card-info
+    {
+        padding: 1rem 0 1rem 1rem;
+        transform:translateY(-150%);
+        opacity:0;
+        position:relative;
+        overflow:hidden;
+        transition: opacity 400ms ease, transform 500ms ease;
+    }
+
+    .buy-button:hover::before
+    {
+        transform:translateX(0);
+    }
+
+    .card:hover .card-info
+    {
+        transform: translateY(0);
+        border: 1px solid rgba(0 0 0 /.15);
+        border-top: none;
+        position:relative;
+        background-color: hsla(27 100% 88% / .3);
+        opacity:1;
+        transition: opacity 600ms ease .7s, transform 600ms ease .7s;
+    }
+
+    .card-info.inactive::before
+    {
+        content:"Must be logged";
+        background:var(--inactive-accent);
+        text-align:center;
+        width:100%;
+        height:10%;
+        position:absolute;
+        padding-bottom:.3rem;
+        left:0;
+        bottom:0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .catalogue
+    {
+        flex-wrap: wrap;
+        margin-top: 5rem;
+    }
+}

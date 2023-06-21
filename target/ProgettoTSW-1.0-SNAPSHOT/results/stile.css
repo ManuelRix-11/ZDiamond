@@ -1,0 +1,47 @@
+@import url(../CSS/navbar.css);
+@import url(../CSS/home.css);
+@import url(../CSS/catalogue.css);
+@import url(../CSS/cart.css);
+@import url(../CSS/register.css);
+@import url(../CSS/footer.css);
+@import url(../CSS/admin-prodotti.css);
+@import url(../CSS/user-page.css);
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+::-webkit-scrollbar
+{
+    width: .3rem;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: hsl(28, 41%, 64%);
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+    *
+    {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
+}

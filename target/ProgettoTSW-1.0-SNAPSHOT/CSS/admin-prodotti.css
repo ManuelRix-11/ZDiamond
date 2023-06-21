@@ -1,0 +1,38 @@
+.admin-prod-page
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.prod-list
+{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    gap: 2rem;
+}
+#legend p
+{
+    border: 1px solid black;
+}
+
+.prod-item
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.prod-item > p
+{
+    width: 20ch;
+    text-align: center;
+}
+
+.add-form
+{
+    overflow: hidden;
+    position: sticky;
+}
+

@@ -1,0 +1,96 @@
+.register-page
+{
+    overflow: hidden;
+}
+
+.register-form
+{
+    overflow: hidden;
+    position: relative;
+}
+
+.form-card
+{
+    margin: 8% auto;
+    border: 1px solid black;
+    padding: 2rem 5rem ;
+    max-width: max-content;
+    animation: fade 600ms ease-in-out forwards;
+    box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);
+}
+
+.flex-buttons
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.register-button
+{
+    padding: .5rem 1.2rem;
+    border-radius: 0;
+}
+
+.form-card.active
+{
+    animation: slide 500ms 350ms ease-in-out both;
+}
+
+.form-group
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: .5rem;
+}
+
+.form-group:last-child
+{
+    margin: 0;
+}
+
+.form-group > h2
+{
+    font-weight: normal;
+}
+
+.form-group > input
+{
+    padding: .5rem 0;
+    outline: none;
+    border: 1px solid black;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.hide
+{
+    display: none;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fade {
+    0% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(.75);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
